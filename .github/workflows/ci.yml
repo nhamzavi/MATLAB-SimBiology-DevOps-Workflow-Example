@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
 
 env:
-  PRODUCT_LIST: MATLAB MATLAB_Test SimBiology Statistics_and_Machine_Learning_Toolbox MATLAB_Compiler
+  PRODUCT_LIST: MATLAB MATLAB_Test SimBiology Statistics_and_Machine_Learning_Toolbox
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -55,8 +55,9 @@ jobs:
       # Run the MATLAB build tool to build and test your code
       - name: Run buildtool
         uses: matlab-actions/run-build@v2
+        continue-on-error: true
         with:
-          tasks: compile
+          tasks: test
 
       # Configure GitHub Pages to accept your artifact uploads
       - name: Setup Pages

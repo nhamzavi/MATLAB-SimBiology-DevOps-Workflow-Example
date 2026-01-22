@@ -101,6 +101,8 @@ classdef tTMDDApp < matlab.uitest.TestCase
             testCase.verifyEqual(oldlhComplex_XData, testCase.App.ConcViewObj.lhComplex.XData, "x values for Complex were updated");
             testCase.verifyEqual(oldlhComplex_YData, testCase.App.ConcViewObj.lhComplex.YData, "y values for Complex were updated");
 
+            testCase.verifyTrue(false, "ddede");
+            
             % Check that lamp is set to false
             testCase.verifyTrue(testCase.App.LampViewObj.IsOn);
 
