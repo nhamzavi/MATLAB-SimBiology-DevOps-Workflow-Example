@@ -85,7 +85,8 @@ classdef tTMDDApp < matlab.uitest.TestCase
             oldlhComplex_YData  = testCase.App.ConcViewObj.lhComplex.YData;
 
             % Drag slider
-            testCase.drag(testCase.App.DosingAmountSlider,100,200);
+            % testCase.drag(testCase.App.DosingAmountSlider,100,200); % requires display (does not work on github)
+            testCase.App.DosingAmountField.Value = 200;
            
             % Check plot update
             testCase.verifyEqual(oldlhRO_XData, testCase.App.ROViewObj.lhRO.XData, "x values for RO not updated");
