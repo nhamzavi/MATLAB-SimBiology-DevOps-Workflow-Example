@@ -26,166 +26,148 @@
             </Label>
         </Category>
     </Categories>
-    <EntryPoints Location="Root">
-        <EntryPoint Location="151f84d5-8a92-4791-88b7-03f74c2d0f3b">
-            <Info File="projectUtilities/updateReadmeLinks.m" GroupUUID="default" Icon="" Name="Update README Links" Type="Basic" Visible="1"/>
-        </EntryPoint>
-        <EntryPoint Location="3d738b7d-2650-4a61-811b-5b54646fbc1c">
-            <Info File="projectUtilities/openWorkshopGuide.m" GroupUUID="default" Icon="" Name="openWorkshopGuide" Type="StartUp" Visible="0">
-                <Extension Name="StartUpPrev" Value="HEAD"/>
-            </Info>
-        </EntryPoint>
-    </EntryPoints>
-    <Files Location="ALM">
-        <Info DigitalThread_ArtifactTracking="true"/>
-        <DIR_SIGNIFIER Location="1">
-            <Info/>
-        </DIR_SIGNIFIER>
-    </Files>
-    <Files Location="MLTestManagerCoverageSettings">
-        <Info autoOpenCoverage="true" coverageMode="MCDC" isCoverageEnabled="true" isGenCoverageEnabled="false"/>
-        <DIR_SIGNIFIER Location="1">
-            <Info/>
-        </DIR_SIGNIFIER>
-    </Files>
     <Files Location="Root">
-        <File Location=".gitattributes">
-            <Info/>
-        </File>
-        <File Location=".github">
-            <Info/>
-            <DIR_SIGNIFIER Location="1">
-                <Info/>
-            </DIR_SIGNIFIER>
-            <File Location="workflows">
-                <Info/>
-                <DIR_SIGNIFIER Location="1">
-                    <Info/>
-                </DIR_SIGNIFIER>
-                <File Location="ci.yml">
-                    <Info/>
-                </File>
-            </File>
-        </File>
-        <File Location=".gitignore">
-            <Info/>
-        </File>
-        <File Location="License.txt">
-            <Info/>
-        </File>
-        <File Location="README.md">
-            <Info/>
-        </File>
-        <File Location="SECURITY.md">
-            <Info/>
-        </File>
-        <File Location="WorkshopGuide.m">
+        <File Location="buildfile.m">
             <Info>
                 <Category UUID="FileClassCategory">
                     <Label UUID="design"/>
                 </Category>
             </Info>
         </File>
-        <File Location="buildfile.m">
+        <File Location="code">
             <Info>
                 <Category UUID="FileClassCategory">
-                    <Label UUID="convenience"/>
+                    <Label UUID="design"/>
                 </Category>
             </Info>
-        </File>
-        <File Location="projectUtilities">
-            <Info/>
             <DIR_SIGNIFIER Location="1">
                 <Info/>
             </DIR_SIGNIFIER>
-            <File Location="updateReadmeLinks.m">
+            <File Location="ConcTimecourseView.m">
                 <Info>
                     <Category UUID="FileClassCategory">
                         <Label UUID="design"/>
                     </Category>
                 </Info>
             </File>
-            <File Location="openWorkshopGuide.m">
+            <File Location="LampView.m">
                 <Info>
                     <Category UUID="FileClassCategory">
                         <Label UUID="design"/>
                     </Category>
                 </Info>
+            </File>
+            <File Location="NCAView.m">
+                <Info>
+                    <Category UUID="FileClassCategory">
+                        <Label UUID="design"/>
+                    </Category>
+                </Info>
+            </File>
+            <File Location="ROTimecourseView.m">
+                <Info>
+                    <Category UUID="FileClassCategory">
+                        <Label UUID="design"/>
+                    </Category>
+                </Info>
+            </File>
+            <File Location="SimulationModel.m">
+                <Info>
+                    <Category UUID="FileClassCategory">
+                        <Label UUID="design"/>
+                    </Category>
+                </Info>
+            </File>
+            <File Location="TMDD.sbproj">
+                <Info/>
+            </File>
+            <File Location="TMDDApp.mlapp">
+                <Info>
+                    <Category UUID="FileClassCategory">
+                        <Label UUID="design"/>
+                    </Category>
+                </Info>
+            </File>
+            <File Location="generateSimFun.m">
+                <Info>
+                    <Category UUID="FileClassCategory">
+                        <Label UUID="design"/>
+                    </Category>
+                </Info>
+            </File>
+            <File Location="graystyle.m">
+                <Info>
+                    <Category UUID="FileClassCategory">
+                        <Label UUID="design"/>
+                    </Category>
+                </Info>
+            </File>
+            <File Location="images">
+                <Info>
+                    <Category UUID="FileClassCategory">
+                        <Label UUID="artifact"/>
+                    </Category>
+                </Info>
+                <DIR_SIGNIFIER Location="1">
+                    <Info/>
+                </DIR_SIGNIFIER>
+                <File Location="Run_24.png">
+                    <Info/>
+                </File>
+                <File Location="diagram.png">
+                    <Info/>
+                </File>
+                <File Location="diagram.svg">
+                    <Info/>
+                </File>
             </File>
         </File>
         <File Location="tests">
-            <Info/>
-            <DIR_SIGNIFIER Location="1">
-                <Info/>
-            </DIR_SIGNIFIER>
-            <File Location="testIsLeapYear.m">
-                <Info>
-                    <Category UUID="FileClassCategory">
-                        <Label UUID="test"/>
-                    </Category>
-                </Info>
-            </File>
-            <File Location="testSimpleSort.m">
-                <Info>
-                    <Category UUID="FileClassCategory">
-                        <Label UUID="test"/>
-                    </Category>
-                </Info>
-            </File>
-        </File>
-        <File Location="code">
-            <Info/>
-            <DIR_SIGNIFIER Location="1">
-                <Info/>
-            </DIR_SIGNIFIER>
-            <File Location="isLeapYear.m">
-                <Info>
-                    <Category UUID="FileClassCategory">
-                        <Label UUID="design"/>
-                    </Category>
-                </Info>
-            </File>
-            <File Location="rockPaperScissors.m">
-                <Info>
-                    <Category UUID="FileClassCategory">
-                        <Label UUID="design"/>
-                    </Category>
-                </Info>
-            </File>
-            <File Location="simpleSort.m">
-                <Info>
-                    <Category UUID="FileClassCategory">
-                        <Label UUID="design"/>
-                    </Category>
-                </Info>
-            </File>
-        </File>
-        <File Location="WorkshopGuide.md">
-            <Info/>
-        </File>
-        <File Location="WorkshopPresentation.pdf">
             <Info>
                 <Category UUID="FileClassCategory">
-                    <Label UUID="artifact"/>
+                    <Label UUID="test"/>
                 </Category>
             </Info>
+            <DIR_SIGNIFIER Location="1">
+                <Info/>
+            </DIR_SIGNIFIER>
+            <File Location="tTMDDApp.m">
+                <Info>
+                    <Category UUID="FileClassCategory">
+                        <Label UUID="test"/>
+                    </Category>
+                </Info>
+            </File>
+            <File Location="tgenerateSimFun.m">
+                <Info>
+                    <Category UUID="FileClassCategory">
+                        <Label UUID="test"/>
+                    </Category>
+                </Info>
+            </File>
+        </File>
+        <File Location=".gitattributes">
+            <Info/>
+        </File>
+        <File Location=".gitignore">
+            <Info/>
         </File>
     </Files>
     <Info Location="ProjectData">
-        <Info Name="Generating-Tests-for-Your-MATLAB-Code-Workshop"/>
+        <Info Name="DevOps"/>
     </Info>
     <ProjectPath Location="Root">
-        <Reference Location="1ac5db08-f2be-444f-b938-da409089495e">
-            <Info Ref="code" Type="Relative"/>
+        <Reference Location="15ab971d-078c-491f-9dd2-597a8d186883">
+            <Info Ref="" Type="Relative"/>
         </Reference>
-        <Reference Location="51b3a057-cf81-438b-a326-e7db137bc5e0">
-            <Info Ref="projectUtilities" Type="Relative"/>
-        </Reference>
-        <Reference Location="9d9a3835-c20f-4bc6-9fcc-fd956c5ad93f">
+        <Reference Location="329fb6ec-bb30-470e-ab33-d6aa4c43f20a">
             <Info Ref="tests" Type="Relative"/>
         </Reference>
-        <Reference Location="f5f08618-a043-47aa-9a3c-f89d5cc4164b">
-            <Info Ref="" Type="Relative"/>
+        <Reference Location="7c74904b-2d30-46df-b5a9-5ae4350be824">
+            <Info Ref="code" Type="Relative"/>
+        </Reference>
+        <Reference Location="cc59744e-559b-4c31-9678-209e2d340504">
+            <Info Ref="code/images" Type="Relative"/>
         </Reference>
     </ProjectPath>
 </project>
