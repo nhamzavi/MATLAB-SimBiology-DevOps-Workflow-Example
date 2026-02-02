@@ -2,7 +2,6 @@ classdef ConcTimecourseView < handle
     
     properties ( Access = private ) 
         Model
-        Axes
         
         ConcColors = [0.30,0.75,0.93;...
                       0.86,0.55,0.41;...
@@ -10,7 +9,11 @@ classdef ConcTimecourseView < handle
         FontName = "Helvetica";
     end
 
-    properties ( SetAccess=private, GetAccess={?tTMDDApp} )
+    properties ( Hidden )
+        % Leave these properties Hidden but public to enable access for any test generated
+        % with Copilot during workshop
+        Axes
+
         % line handles
         lhDrug
         lhReceptor

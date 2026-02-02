@@ -9,7 +9,9 @@ classdef LampView < handle
         LampColorFailure = [0.85, 0.33, 0.10]  % color of lamp if RO not between thresholds after day 1
     end
 
-    properties ( SetAccess=private, GetAccess={?tTMDDApp} )
+    properties ( Hidden )
+        % Leave these properties Hidden but public to enable access for any test generated
+        % with Copilot during workshop
         LampObj
     end
 

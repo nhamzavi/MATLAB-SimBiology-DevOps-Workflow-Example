@@ -7,7 +7,9 @@ classdef NCAView < handle
 
     end
 
-    properties ( SetAccess=private, GetAccess={?tTMDDApp} )
+    properties ( Hidden )
+        % Leave these properties Hidden but public to enable access for any test generated
+        % with Copilot during workshop
         NCAtable
     end
 

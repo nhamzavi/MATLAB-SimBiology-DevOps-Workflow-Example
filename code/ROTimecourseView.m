@@ -8,7 +8,10 @@ classdef ROTimecourseView < handle
             'FontWeight','bold','LabelVerticalAlignment','middle'}; % style for threshold lines
     end
 
-    properties ( GetAccess = {?tTMDDApp} )
+    properties ( Hidden )
+        % Leave these properties Hidden but public to enable access for any test generated
+        % with Copilot during workshop
+
         % line handles
         lhRO
     end

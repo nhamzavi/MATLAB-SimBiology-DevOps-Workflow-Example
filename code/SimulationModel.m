@@ -1,17 +1,6 @@
 classdef SimulationModel < handle
 % Class to simulate the TMDD model
     
-    properties ( SetAccess = private )
-        DoseTable  % daily dose to apply to simulate
-        SimFun     % exported SimFunction
-        
-        SimData
-        SimDataTable
-        
-        ThresholdValues = [20, 80]  % threshold values
-
-    end
-    
     properties
         % original values for resetting
         Amount0           (1,1) double
@@ -20,10 +9,28 @@ classdef SimulationModel < handle
         Kel0              (1,1) double
         Kdeg0             (1,1) double
         Interval0         (1,1) double
+    end
+
+    properties ( Dependent )
         ROIsBetweenThresholds (1,1) logical
     end
 
-    events ( NotifyAccess = private )
+    properties ( Hidden )
+        % Leave these properties Hidden but public to enable access for any test generated
+        % with Copilot during workshop
+
+        DoseTable  % daily dose to apply to simulate
+        SimFun     % exported SimFunction
+        
+        SimDataTable
+        SimData
+
+        ThresholdValues = [20, 80]  % threshold values
+    end
+
+    events ( NotifyAccess = public ) 
+        % Leave this notification public to enable access for any test generated
+        % with Copilot during workshop
         DataChanged
     end
     
@@ -73,10 +80,6 @@ classdef SimulationModel < handle
             idxNotIncreasing = diff(t.Time)<=0; % remove duplicates
             t(idxNotIncreasing,:) = [];
 
-            % logical value to check whether or not RO remains between thresholds after day 1
-            aboveThreshold1 = all(t.RO(t.Time >= 24) >= obj.ThresholdValues(1)/100);
-            belowThreshold2 = all(t.RO(t.Time >= 24) <= obj.ThresholdValues(2)/100);
-            obj.ROIsBetweenThresholds = aboveThreshold1 && belowThreshold2;
 
             obj.SimData = sd;
             obj.SimDataTable = t;
@@ -85,6 +88,13 @@ classdef SimulationModel < handle
             
         end % simulate
         
+        function value = get.ROIsBetweenThresholds(obj)
+            % logical value to check whether or not RO remains between thresholds after day 1
+            timeAfter24h = obj.SimDataTable.Time >= 24;
+            ROAfter24h = obj.SimDataTable.RO(timeAfter24h);
+            value = all(ROAfter24h >= obj.ThresholdValues(1)/100) && ...
+                all(ROAfter24h <= obj.ThresholdValues(2)/100);
+        end % get.ROIsBetweenThresholds()
         
     end % public methods
     
