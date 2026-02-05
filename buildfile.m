@@ -24,14 +24,16 @@ plan("test") = tTaskWithMatlabTest;
 plan("clean") = CleanTask();
 
 % Define dependencies
-plan("compile").Dependencies = "test";
+plan("compile").Dependencies = "generateMDguide";
 plan("test").Dependencies = "generateSimFun";
 plan("generateSimFun").Dependencies = "check";
+plan("generateMDguide").Dependencies = "test";
 
 % Define inputs and outputs
 proj = currentProject;
 plan("generateSimFun").Inputs = fullfile(proj.RootFolder,"code","*.sbproj");
 plan("generateSimFun").Outputs = fullfile(proj.RootFolder,"code","simFunction_Dose.mat");
+plan("generateMDguide").Inputs = fullfile(proj.RootFolder,"WorkshopGuide.m");
 plan("test").Inputs = fullfile(proj.RootFolder,"code","*");
 plan("compile").Inputs = fullfile(proj.RootFolder,"code",["simFunction_Dose.mat","*.mlapp","*.m"]);
 plan("compile").Outputs = fullfile(proj.RootFolder,"WebAppArchive");
@@ -39,6 +41,12 @@ plan("compile").Outputs = fullfile(proj.RootFolder,"WebAppArchive");
 % Set default task
 plan.DefaultTasks = "compile";
 
+end
+
+function generateMDguideTask(~)
+    proj = currentProject;
+
+    export("WorkshopGuide.m",fullfile(proj.RootFolder,"WorkshopGuide.md"));
 end
 
 function generateSimFunTask(~)
