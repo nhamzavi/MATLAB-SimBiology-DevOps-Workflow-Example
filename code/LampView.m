@@ -25,7 +25,11 @@ classdef LampView < handle
 
     methods
         function obj = LampView(parent,model)
-
+            
+            arguments
+                parent 
+                model (1,1) SimulationModel
+            end
             lampObj = uilamp(parent);
             lampObj.Tooltip = compose("Target occupancy does not remain\n between thresholds");
             lampObj.Color = obj.LampColorFailure;
