@@ -6,6 +6,7 @@ classdef ConcTimecourseView < handle
         ConcColors = [0.30,0.75,0.93;...
                       0.86,0.55,0.41;...
                       0.91,0.73,0.42]; % colors to plot concentrations
+        LineWidth = 2.5
         FontName = "Helvetica";
     end
 
@@ -39,10 +40,10 @@ classdef ConcTimecourseView < handle
             xlabel(ax, "Time (hours)", 'FontName',obj.FontName);
             ylabel(ax, "Concentrations (nanomole/liter)",'FontName',obj.FontName);
 
-            obj.lhDrug = plot(ax, NaN, NaN, '-','Linewidth',2,'DisplayName','Drug');
+            obj.lhDrug = plot(ax, NaN, NaN, '-','Linewidth',obj.LineWidth,'DisplayName','Drug');
             hold(ax,'on');
-            obj.lhReceptor = plot(ax, NaN, NaN, '-','Linewidth',2,'DisplayName','Receptor');
-            obj.lhComplex= plot(ax, NaN, NaN, '-','Linewidth',2,'DisplayName','Complex');
+            obj.lhReceptor = plot(ax, NaN, NaN, '-','Linewidth',obj.LineWidth,'DisplayName','Receptor');
+            obj.lhComplex= plot(ax, NaN, NaN, '-','Linewidth',obj.LineWidth,'DisplayName','Complex');
             hold(ax,'off');
             lgd = legend(ax,'show','FontName',obj.FontName,'Color','none');
             lgd.Box = "off";

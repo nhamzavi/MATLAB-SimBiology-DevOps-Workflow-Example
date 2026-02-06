@@ -5,6 +5,8 @@ classdef ROTimecourseView < handle
 
         ThresholdStyle   = {'Color','r','Linewidth',2,'LineStyle','--',...
             'FontWeight','bold','LabelVerticalAlignment','middle'}; % style for threshold lines
+
+        Linewidth = 2.5
     end
 
     properties ( Hidden, SetAccess=private)
@@ -41,7 +43,7 @@ classdef ROTimecourseView < handle
             xlabel(ax, "Time (hours)", 'FontName',obj.FontName);
             ylabel(ax, "RO (%)",'FontName',obj.FontName);
 
-            obj.lhRO = plot(ax, NaN, NaN,'Linewidth',2);
+            obj.lhRO = plot(ax, NaN, NaN,'Linewidth',obj.Linewidth);
             yline(ax,model.ThresholdValues(1), '--','efficacy','FontName',obj.FontName,obj.ThresholdStyle{:});
             yline(ax,model.ThresholdValues(2), '--','safety','FontName',obj.FontName,obj.ThresholdStyle{:});
             grid(ax,"on");
