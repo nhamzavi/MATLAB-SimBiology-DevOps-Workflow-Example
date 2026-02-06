@@ -39,8 +39,15 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+
       # Check out your repository
       - uses: actions/checkout@v5
+
+      # Start display server (for UI tests in Linux)
+      - name: Start display server
+        run: |
+          Xvfb :99 & 
+          echo "DISPLAY=:99" >> $GITHUB_ENV
 
       # Set up MATLAB on a GitHub-hosted runner
       - name: Setup MATLAB
@@ -48,11 +55,6 @@ jobs:
         with:
           products: ${{ env.PRODUCT_LIST }}
           cache: true
-
-      - name: Start display server (for UI tests in Linux)
-        run: |
-          Xvfb :99 & 
-          echo "DISPLAY=:99" >> $GITHUB_ENV
 
       # Run the MATLAB build tool to build and test your code
       - name: Run buildtool
@@ -72,7 +74,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     # The type of runner that the job will run on
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -80,6 +82,12 @@ jobs:
       # Check out your repository
       - uses: actions/checkout@v5
       
+      # Start display server (for UI tests in Linux)
+      - name: Start display server
+        run: |
+          Xvfb :99 & 
+          echo "DISPLAY=:99" >> $GITHUB_ENV
+
       # Set up MATLAB on a GitHub-hosted runner
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v2
