@@ -2,7 +2,6 @@ classdef ROTimecourseView < handle
     
     properties ( Access = private ) 
         Model
-        Axes
 
         ThresholdStyle   = {'Color','r','Linewidth',2,'LineStyle','--',...
             'FontWeight','bold','LabelVerticalAlignment','middle'}; % style for threshold lines
@@ -12,8 +11,9 @@ classdef ROTimecourseView < handle
         % Leave these properties Hidden but public to enable access for any test generated
         % with Copilot during workshop
 
-        % line handles
         lhRO
+        Axes
+
     end
 
     properties ( Access = public ) 
@@ -37,10 +37,11 @@ classdef ROTimecourseView < handle
             end
             
             ax = uiaxes(parent);
+            ax.ColorOrder = obj.ROColors;
             xlabel(ax, "Time (hours)", 'FontName',obj.FontName);
             ylabel(ax, "RO (%)",'FontName',obj.FontName);
 
-            obj.lhRO = plot(ax, NaN, NaN, 'Color', obj.ROColors,'Linewidth',2);
+            obj.lhRO = plot(ax, NaN, NaN,'Linewidth',2);
             yline(ax,model.ThresholdValues(1), '--','efficacy','FontName',obj.FontName,obj.ThresholdStyle{:});
             yline(ax,model.ThresholdValues(2), '--','safety','FontName',obj.FontName,obj.ThresholdStyle{:});
             grid(ax,"on");
