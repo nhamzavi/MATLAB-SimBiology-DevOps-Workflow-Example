@@ -19,19 +19,19 @@ In this workshop, you will:
 ## Table of Contents
 &emsp;[Workshop Requirements](#H_34C2FB57)
  
-&emsp;[Part 1:  Getting the workshop files and configuring GitHub for automated testing and results publishing](#TMP_569f)
+&emsp;[Part 1:  Getting the workshop files and configuring GitHub for automated testing and results publishing](#TMP_347b)
  
-&emsp;[Part 2:  Generating your first tests](#TMP_6930)
+&emsp;[Part 2:  Generating your first tests](#TMP_8fa0)
  
-&emsp;[Part 3:  Finding existing tests and measuring coverage](#TMP_50f4)
+&emsp;[Part 3:  Finding existing tests and measuring coverage](#TMP_73c3)
  
-&emsp;[Part 4:  Updating badges, committing our changes, and pushing to GitHub](#TMP_5540)
+&emsp;[Part 4:  Updating badges, committing our changes, and pushing to GitHub](#TMP_5f22)
  
-&emsp;[Part 5:  Create a pull request, watch GitHub Actions automatically test your changes and publish results](#TMP_3054)
+&emsp;[Part 5:  Create a pull request, watch GitHub Actions automatically test your changes and publish results](#TMP_344c)
  
-&emsp;[Part 6:  Compile the App in the CI workflow and download the artifact](#TMP_1fc1)
+&emsp;[Part 6:  Compile the App in the CI workflow and download the artifact](#TMP_431c)
  
-&emsp;[Workshop wrap\-up and additional information](#TMP_225a)
+&emsp;[Workshop wrap\-up and additional information](#TMP_657c)
  
 <!-- End Toc -->
 <a id="H_34C2FB57"></a>
@@ -56,7 +56,7 @@ The following steps cover all of the things you will need to successfully comple
 -  The workshop leverages the free repository and CI capabilities offered by GitHub and GitHub Actions 
 -  Go to:  [**https://github.com/signup**](https://github.com/signup) 
 
-<a id="TMP_569f"></a>
+<a id="TMP_347b"></a>
 
 # Part 1:  Getting the workshop files and configuring GitHub for automated testing and results publishing
 
@@ -308,7 +308,7 @@ Click on the 'Run App' shortcut to start the app in MATLAB:
 ![image_20.png](WorkshopGuide_media/image_20.png)
 
 
-<a id="TMP_6930"></a>
+<a id="TMP_8fa0"></a>
 
 # Part 2:  Generating your first tests
 
@@ -529,7 +529,7 @@ Congratulations! You just created multiple tests for your MATLAB code!
 
 It was easier than you thought, right?
 
-<a id="TMP_50f4"></a>
+<a id="TMP_73c3"></a>
 
 # Part 3:  Finding existing tests and measuring coverage
 
@@ -868,7 +868,7 @@ It looks like we've achieved full statement coverage for [`generateSimFun`](./co
 ![image_65.png](WorkshopGuide_media/image_65.png)
 
 
-<a id="TMP_5540"></a>
+<a id="TMP_5f22"></a>
 
 # Part 4:  Updating badges, committing our changes, and pushing to GitHub
 
@@ -904,7 +904,7 @@ To make this easy, the workshop provides a useful project shortcut that will aut
 
 *Note*: If you want to manually update the links, you will need to make the following changes to all of the links in the [`README.md`](./README.md) file:
 
--  replace the "mathworks" GitHub username with your GitHub username 
+-  replace the "simkaryote" GitHub username with your GitHub username 
 -  if you renamed the repository during the fork process in [Part 1.1](#H_DB2C80D4), replace "MATLAB\-SimBiology\-DevOps\-Workflow\-Example" repository name with your GitHub repository name 
 
 
@@ -935,7 +935,7 @@ Now that you've added tests, and updated your badges, it's time to commit your c
 You have now committed your changes.
 
 
-Usually, the next step is to push our changes back to GitHub. This is really easy and straightforward when using Git from a desktop application (e.g., the desktop version of MATLAB). However, since we are pushing our changes from an online application (MATLAB Online), GitHub requires a personal access token to allow MATLAB Online to make changes to your GitHub repository.
+Usually, the next step is to push our changes back to GitHub. This is really easy and straightforward when using Git from a desktop application (e.g., the desktop version of MATLAB). If we are pushing our changes from an online application like MATLAB Online, or if you don't have the Git Credential Manager on your machine, GitHub requires a personal access token to allow MATLAB Online to make changes to your GitHub repository.
 
 
 
@@ -963,7 +963,7 @@ Personal access tokens are meant to be treated like passwords:
 When you install Git on your desktop, it comes with the Git Credential Manager. The Git Credential Manager will accept a username/password combination, it will securely get and store a personal access token for you, and it will make it very easy to push and pull changes without manually generating a personal access token.
 
 
-For this MATLAB Online session, you will need to manually create a personal access token to give MATLAB Online permission to push changes to your GitHub repository. GitHub provides directions for [how to create a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token), but this part of the workshop will give you a step\-by\-step guide to creating your own personal access token.
+For a MATLAB Online session or other situations, you will need to manually create a personal access token to give MATLAB Online permission to push changes to your GitHub repository. GitHub provides directions for [how to create a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token), but this part of the workshop will give you a step\-by\-step guide to creating your own personal access token.
 
 
 <a id="H_7AE18FA9"></a>
@@ -1088,7 +1088,7 @@ At this point, all of your changes will be pushed to GitHub.
 ![image_85.png](WorkshopGuide_media/image_85.png)
 
 
-<a id="TMP_3054"></a>
+<a id="TMP_344c"></a>
 
 # Part 5:  Create a pull request, watch GitHub Actions automatically test your changes and publish results
 
@@ -1249,7 +1249,7 @@ The code coverage report looks like this:
 
 Now anyone that visits your repository can immediately see the quality of your code, explore your test and code coverage results, and will have more confidence in the code you are writing!
 
-<a id="TMP_1fc1"></a>
+<a id="TMP_431c"></a>
 
 # Part 6:  Compile the App in the CI workflow and download the artifact
 
@@ -1350,7 +1350,7 @@ Once the `Deploy/ Release (main)` job is done, a new artifact is available at th
 
 You can now download the CTF file and upload it to your Web App Server!
 
-<a id="TMP_225a"></a>
+<a id="TMP_657c"></a>
 
 # Workshop wrap\-up and additional information
 
