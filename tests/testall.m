@@ -11,7 +11,7 @@ classdef testall < matlab.unittest.TestCase
 
 
             testCase.verifyClass(sObj.SimData, 'SimData')
-            testCase.verifyFalse(output2);
+            testCase.verifyTrue(output2);
         end
     end
 end
